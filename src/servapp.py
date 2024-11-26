@@ -1,5 +1,10 @@
 from flask import Flask
+from test import firstTest
 app = Flask(__name__)
+
+@app.route("/test")
+def globalTest():
+	return firstTest()
 
 @app.route("/")
 def hello():

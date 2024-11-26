@@ -2,13 +2,9 @@ from flask import Flask
 from test import firstTest
 app = Flask(__name__)
 
-@app.route("/test")
-def globalTest():
-	return firstTest()
-
 @app.route("/")
 def hello():
-    return "<h1 style='color:blue'>Hello There! MODIFIER</h1>"
+    return firstTest("Nathan")
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

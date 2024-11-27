@@ -5,12 +5,17 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def hello():
-	print (sys.argv)
-#	print("test")
+def hello()
 	return "<h1>hello<h1>"
+
+def main():
+	if sys.argv[1] == "-dev":
+	print (sys.argv)
+	else:
+	app.run(host='0.0.0.0')
+#	print("test")
     #return firstTest("Nathan")
 
 if __name__ == "__main__":
-	hello()
+	main()
 #    app.run(host='0.0.0.0')

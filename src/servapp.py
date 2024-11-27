@@ -10,9 +10,9 @@ def hello():
 
 def main():
 	if sys.argv[1] == "-dev":
-	print (sys.argv)
+		print (sys.argv)
 	else:
-	app.run(host='0.0.0.0')
+		app.run(host='0.0.0.0')
 #	print("test")
     #return firstTest("Nathan")
 

@@ -9,4 +9,5 @@ def hello():
     #return firstTest("Nathan")
 
 if __name__ == "__main__":
+	print("main function")
     app.run(host='0.0.0.0')

@@ -7,7 +7,7 @@ echo "~~ Docker image deleted ~~"
 sudo docker image rm web_server -f
 
 echo "~~ Building nez image ~~"
-sudo docker build -t web_server . > tmp.txt
+sudo docker build -t web_server -f Dev_Dockerfile . > tmp.txt
 
 echo "~~ Running container ~~"
 sudo docker run --mount type=bind,src=/logs/logs.txt,target=/home/nathan/logs.txt --name web_container web_server

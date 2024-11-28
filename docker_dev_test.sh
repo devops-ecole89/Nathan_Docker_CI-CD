@@ -17,7 +17,8 @@ LogResult=`cat /logs/logs.txt`
 if [ "$LogResult" = "SUCCESS" ];
 then
 	git checkout staging
-	git merge dev --allow-unrelated-histories
+	git merge dev
+	git push
 else
 	echo "Test Failed : $LogResult"
 fi

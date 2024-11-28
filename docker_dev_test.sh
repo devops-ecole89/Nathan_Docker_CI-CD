@@ -1,10 +1,10 @@
 #!/bin/sh
 
-echo "~~ Docker container deleted ~~"
-sudo docker rm ps web_container -f
+#echo "~~ Docker container deleted ~~"
+#sudo docker rm ps web_container -f
 
-echo "~~ Docker image deleted ~~"
-sudo docker image rm web_server -f
+#echo "~~ Docker image deleted ~~"
+#sudo docker image rm web_server -f
 
 echo "~~ Building nez image ~~"
 sudo docker build -t web_server -f Dev_Dockerfile . > tmp.txt

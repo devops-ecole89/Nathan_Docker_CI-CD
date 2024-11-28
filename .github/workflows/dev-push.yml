@@ -18,3 +18,9 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
+    - name: Create Logs File
+      run: |
+        mkdir /logs
+        touch /logs/logs.txt
+    - name: Run Docker Shell Script
+      run: sh docker_dev_test.sh

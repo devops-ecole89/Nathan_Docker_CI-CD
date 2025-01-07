@@ -7,4 +7,3 @@ git checkout dev
 
 ### Run the app in test mode
 python src/servapp.py -dev > ../logs.txt
-cat ../logs.txt

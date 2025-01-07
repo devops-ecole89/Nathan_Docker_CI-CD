@@ -12,7 +12,7 @@ RUN pip install --no-cache-dir flask
 RUN rm -rf /var/lib/apt/lists/*
 
 # Get the launch_dev script
-COPY ./scipts/launch_dev.sh .
+COPY ./scripts/launch_dev.sh .
 
 # Run launch_dev.sh
 CMD ["sh", "launch_dev.sh"]

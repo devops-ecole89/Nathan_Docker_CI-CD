@@ -26,8 +26,8 @@ checkContainerFunction()
 
 	elif [ "$perform" = "dev" ];
 	then
-		docker rm ps pyapp-container_dev -f
 		delImage="pyapp-image_dev"
+		docker rm ps pyapp-container_dev -f
 
 	else
 		return
@@ -58,7 +58,13 @@ then
 	echo "${GREEN}\t~~ Starting App in \"Dev use\" ~~$WHITE\n"
 	perform="dev"
 	checkContainerFunction
-	sh scripts/docker_dev_test.sh
+	# Check if a specific user is send for the git command
+	if [ -z "$2" ];
+	then
+		sh scripts/docker_dev_test.sh
+	else
+		sh scripts/docker_dev_test.sh $2
+	fi
 	echo "${GREEN}SUCCESS !"
 
 # Purge the full Docker

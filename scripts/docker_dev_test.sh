@@ -22,7 +22,7 @@ fi
 
 ### Build Dockerfile_Dev image : pyapp-image_dev
 echo "${CYAN}Building image [...]$WHITE\n"
-sudo docker build -t pyapp-image_dev -f Dockerfile_Dev . > ${path}logs/docker_build.txt
+sudo docker build -t pyapp-image_dev -f ${path}Dockerfile_Dev . > ${path}logs/docker_build.txt
 
 ### Run the Dev container based on Dockerfile_Dev image with the logs.txt file binding
 echo "${CYAN}Running container [...]$WHITE\n"

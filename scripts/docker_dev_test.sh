@@ -1,5 +1,3 @@
-
-```shell
 #!/bin/sh
 
 #echo "~~ Docker container deleted ~~"
@@ -28,4 +26,3 @@ then # Merge to staging branch if it's a SUCCESS
 else
         echo "Test Failed : $LogResult"
 fi
-```

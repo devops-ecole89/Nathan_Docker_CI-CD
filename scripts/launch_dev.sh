@@ -1,5 +1,3 @@
-
-```shell
 ### Clone the Python app repo
 git clone https://github.com/devops-ecole89/Nathan_DevOps.git
 
@@ -10,4 +8,3 @@ cd ../
 
 ### Run the app in test mode
 python Nathan_DevOps/src/servapp.py -dev > logs.txt
-```

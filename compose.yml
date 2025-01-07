@@ -1,10 +1,7 @@
-
-```yaml
 services:
-	app:
-		build:
-			context: .
-			dockerfile: Dockerfile_Main
-		ports:
-			- "8080:5000" # Redirect port 8080 to 5000
-```
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile_Main
+    ports:
+      - "8080:5000" # Redirect port 8080 to 5000

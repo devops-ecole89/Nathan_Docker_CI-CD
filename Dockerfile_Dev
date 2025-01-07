@@ -1,0 +1,22 @@
+
+```Dockerfile
+FROM python
+
+# Set the Working directory
+WORKDIR /home/app
+
+# Update and install all tools and dependecies
+RUN apt update
+RUN apt install -y python3-pip python3-dev build-essential libssl-dev libffi-dev python3-setuptools
+RUN pip install --no-cache-dir flask
+
+# Block the other futur installation to secure the service
+RUN rm -rf /var/lib/apt/lists/*
+
+# Get the launch_dev script
+COPY ./scipts/launch_dev.sh .
+
+# Run launch_dev.sh
+CMD ["sh", "launch_dev.sh"]
+```
+

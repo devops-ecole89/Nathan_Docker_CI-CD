@@ -1,0 +1,24 @@
+
+```Dockerfile
+FROM python
+
+# Set the Working directory
+WORKDIR /home/app
+
+# Update and install all tools and dependecies
+RUN apt update
+RUN apt install -y python3-pip python3-dev build-essential libssl-dev libffi-dev python3-setuptools
+RUN pip install --no-cache-dir flask
+
+# Block the other futur installation to secure the service
+RUN rm -rf /var/lib/apt/lists/*
+
+# Open the 5000 port id
+EXPOSE 5000
+
+# Get the python app from the git repo
+RUN git clone https://github.com/devops-ecole89/Nathan_DevOps.git .
+
+# Run the app
+CMD ["python", "src/servapp.py"]
+```

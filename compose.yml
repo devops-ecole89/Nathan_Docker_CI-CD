@@ -3,5 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile_Main
+    image: pyapp-image_app
     ports:
       - "8080:5000" # Redirect port 8080 to 5000

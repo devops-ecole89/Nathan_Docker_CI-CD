@@ -6,13 +6,13 @@
 #echo "~~ Docker image deleted ~~"
 #sudo docker image rm web_server -f
 
-### Build Dockerfile_Dev image 
+### Build Dockerfile_Dev image
 echo "~~ Building image ~~"
-sudo docker build -t PyAppImage_Dev -f Dockerfile_Dev . > tmp.txt
+sudo docker build -t pyapp-image_dev -f Dockerfile_Dev . > tmp.txt
 
 ### Run the Dev container based on Dockerfile_Dev image with the logs.txt file binding
 echo "~~ Running container ~~"
-sudo docker run --mount type=bind,src=/logs/logs.txt,target=/home/nathan/logs.txt --name PyAppContainer_Dev PyAppImage_Dev
+sudo docker run --mount type=bind,src=/logs/logs.txt,target=/home/nathan/logs.txt --name pyapp-container_dev pyapp-image_dev
 
 ### Get tests results
 LogResult=`cat /logs/logs.txt`

@@ -1,5 +1,5 @@
 ### Clone the Python app repo
-git clone https://github.com/devops-ecole89/Nathan_DevOps.git
+git clone https://github.com/devops-ecole89/Nathan_PyApp_CI-CD.git
 
 ### Moove to the Dev branch
 cd ./Nathan_DevOps

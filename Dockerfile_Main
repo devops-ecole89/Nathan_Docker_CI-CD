@@ -15,7 +15,7 @@ RUN rm -rf /var/lib/apt/lists/*
 EXPOSE 5000
 
 # Get the python app from the git repo
-RUN git clone https://github.com/devops-ecole89/Nathan_DevOps.git .
+RUN git clone https://github.com/devops-ecole89/Nathan_PyApp_CI-CD.git .
 
 # Run the app
 CMD ["python", "src/servapp.py"]

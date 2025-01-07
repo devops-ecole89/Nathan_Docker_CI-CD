@@ -1,11 +1,5 @@
 #!/bin/sh
 
-#echo "~~ Docker container deleted ~~"
-#sudo docker rm ps web_container -f
-
-#echo "~~ Docker image deleted ~~"
-#sudo docker image rm web_server -f
-
 ### Build Dockerfile_Dev image
 echo "~~ Building image ~~"
 sudo docker build -t pyapp-image_dev -f Dockerfile_Dev . > tmp.txt

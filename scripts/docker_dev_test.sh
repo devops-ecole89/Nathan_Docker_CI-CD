@@ -29,10 +29,12 @@ if [ "$LogResult" = "SUCCESS" ];
 then # Merge to staging branch if it's a SUCCESS
 	echo "${GREEN}Test succed."
 	echo "${YELLOW}Go to PyApp_CI-CD repo to merge [...]"
-	cd ../PyApp_CI-CD
+	cd ../Nathan_PyApp_CI-CD
 	echo "${CYAN}Merge ${BWHITE}dev ${CYAN}branch to ${BWHITE}staging\n$WHITE"
         git checkout staging
         git merge -X theirs dev --allow-unrelated-histories
+
+	# Push with the indicate user or not
 	if [ ! -z "$1" ];
 	then
 		/bin/su -s /bin/bash -c "git push" $1

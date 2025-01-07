@@ -22,7 +22,7 @@ It is quit simple, there is only two command :
 1. `sh main.sh` : start the Dockerfile_Main for a classic use of the app
 2. `sh main.sh -dev` : start the Dockerfile_Dev to test the app and update the git repo
 	- You can add a user in a second argument. The script will take the indicate user to perform the git push command.
-	- The other solution is to run `git config --add --local core.sshCommand 'ssh -i /home/${user}/.ssh/${private_ssh_key}'
+	- The other solution is to run `git config --add --local core.sshCommand 'ssh -i /home/${user}/.ssh/${private_ssh_key}'`
 	- One of those solution is required if you run the script in sudo mode (In my case, I have to for the execution of docker command)
 
 ---

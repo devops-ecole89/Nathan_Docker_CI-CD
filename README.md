@@ -44,16 +44,20 @@ It is quit simple, there is only two command :
 
 ---
 ## How it works
+Before executing one of those steps below, `main.sh` will check and deleted docker image & container if needed.
+
 ### Classic app
 The basic way just execute `docker compose up` that start the `compose.yml` who build the `Dockerfile_Main`. 
 `Dockerfile_Main` clone the python app repo and run it.
 
 ### Test app
-With the `-dev` flag, the script run `docker_dev_test.sh` who build the `Dockerfile_Dev` container and run it with a bind of the `logs.txt` file.
-The `Dockerfile_Dev` container copy `launch_dev.sh` and run it.
-`launch_dev` performs a `git clone` of the python app, `git checkout dev` and then run the app with the `-dev` flag (checkout the readme of the python app).
-The output is send to the `logs.txt` witch is shared with the host.
-Finally `docker_dev_test.sh` check the `logs.txt` file and if it's a SUCCES then merge dev to staging otherwise echo logs.
+- With the `-dev` flag, the script run `docker_dev_test.sh` who build the `Dockerfile_Dev` container and run it with a bind of the `logs.txt` file.
+- The building image process is written in `docker_build.txt`.
+- The `Dockerfile_Dev` container copy `launch_dev.sh` and run it.
+- `launch_dev` performs a `git clone` of the python app, `git checkout dev` and then run the app with the `-dev` flag (checkout the readme of the python app).
+- The output is send to the `logs.txt` witch is shared with the host.
+- Finally `docker_dev_test.sh` check the `logs.txt` file and if it's a SUCCES then merge dev to staging otherwise echo logs.
+- If a user is sent as second argument (like this `sudo sh main.sh -dev nathan`), it will take this user for the `git push`. So be careful to use an existing user who has the right of writing in the repos
 
 ### Purge
 With the `--purge` flag will execute `docker system prune -a` and purge all of your docker.
